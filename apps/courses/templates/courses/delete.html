@@ -1,0 +1,22 @@
+<html>
+    <head>
+       <title>Delete Course | {{ courses.name }}</title>
+       <link rel="stylesheet" href="../../static/courses/styles.css">
+    </head>
+    <body>
+      <h3>Are you sure you want to delete this course?</h3>
+      <div>
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <p>Name: {{ courses.name }}</p>
+      <p>Description: {{ courses.description }}</p>
+      <a href="/courses">No</a>
+      <a href="/courses/{{ courses.id }}/submit_delete">Yes, delete this course.</a>
+    </body>
+</html>

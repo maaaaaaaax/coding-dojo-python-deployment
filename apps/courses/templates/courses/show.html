@@ -1,0 +1,22 @@
+<html>
+    <head>
+       <title>Users Show </title>
+       <link rel="stylesheet" href="../../static/rest_users/styles.css">
+    </head>
+    <body>
+      <h3>User {{ users.id }}</h3>
+      <div>
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <p>Full name: {{ users.first_name }} {{ users.last_name}}</p>
+      <p>Email: {{ users.email_address }}</p>
+      <a href="/edit">Edit</a>
+      <a href="/users/{{ users.id }}/submit_delete">Delete</a>
+    </body>
+</html>
